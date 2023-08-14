@@ -1,13 +1,11 @@
-const robotron = document.querySelector("#robotron")
+const subtrair = document.querySelector("#subtrair")
+const somar = document.querySelector("#somar")
+const braco = document.querySelector("#braco")
 
-robotron.addEventListener("click", (evento) => {
-    console.log(evento)
+somar.addEventListener("click", (evento) => {
+    braco.value = parseInt(braco.value) + 1 
 })
-//essa função vai escutar algum evento
 
-function dizOi(nome) {
-    console.log("Olá " + nome)
-    console.log("Bem-Vindo ao Robotron 2000")
-} 
-
-dizOi("Pedro")
+subtrair.addEventListener("click", (evento) => {
+    braco.value = parseInt(braco.value) - 1
+})
