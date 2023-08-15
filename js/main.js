@@ -1,18 +1,18 @@
-const subtrair = document.querySelector("#subtrair")
-const somar = document.querySelector("#somar")
-const braco = document.querySelector("#braco")
-
-const controle = document.querySelectorAll(".controle-ajuste")
+const controle = document.querySelectorAll("[data-controle]")
 
 controle.forEach((elmento) => {
     elmento.addEventListener("click", (evento) => {
-        manipulaDados(evento.target.textContent)
+        manipulaDados(evento.target.dataset.controle, evento.target.parentNode)
+         //parentNodepara achar o elemnto "pai"
+        
         //.textContent -> vai mostrar todo o conteudo do texto.
     })
 })
 
 
-function manipulaDados(operacao) {
+function manipulaDados(operacao, controle) {
+    const peca = controle.querySelector("[data-contador]")
+    
     if (operacao === "-") {
         braco.value = parseInt(braco.value) - 1
 
